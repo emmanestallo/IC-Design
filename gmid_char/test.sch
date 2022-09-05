@@ -51,6 +51,7 @@ save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
 
 dc v2 0 1 1m 
 
@@ -58,6 +59,7 @@ let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 let cgg = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
+let vdsat = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
 
 let gain = gm/gds 
 let ft = gm/(2*3.1415*cgg)
@@ -67,8 +69,15 @@ plot gain
 plot ft
 plot gmoverid
 plot id 
+plot vdsat
+
+wrdata gain.txt gain 
+wrdata ft.txt ft 
+wrdata gmoverid.txt gmoverid 
+wrdata id.txt id
 
 .endc
+
 
 "}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 1030 -1890 0 0 {name=M1
