@@ -29,4 +29,5 @@ ax[1,1].set_xlabel('gm/id')
 ax[1,1].set_ylabel('vdsat') 
 ax[1,1].grid() 
 
+fig.tight_layout()
 plt.show()
