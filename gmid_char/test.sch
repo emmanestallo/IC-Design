@@ -43,6 +43,7 @@ value="
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .option wnflag=1 
+
 .param length = 0.4
 .param width = 1
 

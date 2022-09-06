@@ -11,9 +11,9 @@ vgs = np.loadtxt('vgs.txt')[:,1]
 
 fig, ax = plt.subplots(2,2)
 
-ax[0,0].plot(gmoverid, ft)
-ax[0,0].set_xlabel('gm/id') 
-ax[0,0].set_ylabel('ft') 
+ax[0,0].plot(vgs, gmoverid)
+ax[0,0].set_xlabel('vgs') 
+ax[0,0].set_ylabel('gmoverid') 
 ax[0,0].grid(linestyle='--') 
 
 ax[0,1].plot(gmoverid, gain)
@@ -26,9 +26,9 @@ ax[1,0].set_xlabel('gm/id')
 ax[1,0].set_ylabel('id/w') 
 ax[1,0].grid(linestyle='--') 
 
-ax[1,1].plot(vgs, gmoverid)
-ax[1,1].set_xlabel('vgs') 
-ax[1,1].set_ylabel('gm/id') 
+ax[1,1].plot(gmoverid, ft)
+ax[1,1].set_xlabel('gm/id') 
+ax[1,1].set_ylabel('ft') 
 ax[1,1].grid(linestyle='--') 
 
 fig.tight_layout()
