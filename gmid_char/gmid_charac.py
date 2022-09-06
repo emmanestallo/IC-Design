@@ -27,8 +27,8 @@ ax[1,0].set_ylabel('id/w')
 ax[1,0].grid(linestyle='--') 
 
 ax[1,1].plot(vgs, gmoverid)
-ax[1,1].set_xlabel('gm/id') 
-ax[1,1].set_ylabel('vgs') 
+ax[1,1].set_xlabel('vgs') 
+ax[1,1].set_ylabel('gm/id') 
 ax[1,1].grid(linestyle='--') 
 
 fig.tight_layout()
