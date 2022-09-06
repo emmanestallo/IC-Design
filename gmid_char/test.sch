@@ -43,47 +43,47 @@ value="
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .option wnflag=1 
+.param length = 0.4
+.param width = 1
 
 .control 
 save all 
 
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm1.msky130_fd_pr__nfet_01v8[id]
+save @m.xm1.msky130_fd_pr__nfet_01v8[gds]
+save @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
+save @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
+save @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
 
-dc v2 0 1 1m 
+dc v2 0 1 1m  
 
-let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
-let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
-let cgg = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
-let vdsat = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+let gm = @m.xm1.msky130_fd_pr__nfet_01v8[gm]
+let id = @m.xm1.msky130_fd_pr__nfet_01v8[id]
+let gds = @m.xm1.msky130_fd_pr__nfet_01v8[gds]
+let cgg = @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
+let vdsat = @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
+let vgs = @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
 
-let gain = gm/gds 
-let ft = gm/(2*3.1415*cgg)
+let gmro = gm/gds 
+let ft = gm/(2*pi*cgg)
 let gmoverid = gm/id
 
-plot gain
-plot ft
-plot gmoverid
-plot id 
-plot vdsat
-
-wrdata gain.txt gain 
+wrdata gmro.txt gmro
 wrdata ft.txt ft 
 wrdata gmoverid.txt gmoverid 
 wrdata id.txt id
+wrdata vdsat.txt vdsat
+wrdata vgs.txt vgs
 
 .endc
 
 
 "}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 1030 -1890 0 0 {name=M1
-L=0.15
-W=1
-nf=1
+C {sky130_fd_pr/nfet_01v8.sym} 1030 -1890 0 0 {name=M1
+L="length"
+W="width"
+nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -91,6 +91,6 @@ as="'int((nf+2)/2) * W/nf * 0.29'"
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=nfet_01v8_lvt
+model=nfet_01v8
 spiceprefix=X
 }
