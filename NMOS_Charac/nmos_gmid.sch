@@ -31,9 +31,10 @@ N 1200 -2000 1200 -1990 {
 lab=#net1}
 N 1200 -1990 1200 -1930 {
 lab=#net1}
-C {devices/vsource.sym} 1200 -1880 0 0 {name=V1 value=1
+C {devices/vsource.sym} 1200 -1880 0 0 {name=V1 value=0.9
 }
-C {devices/vsource.sym} 960 -1840 0 0 {name=V2 value=1}
+C {devices/vsource.sym} 960 -1840 0 0 {name=V2 value=0.9
+}
 C {devices/gnd.sym} 960 -1780 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1200 -1810 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1050 -1820 0 0 {name=l1 lab=GND}
