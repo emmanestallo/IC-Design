@@ -55,43 +55,13 @@ C {devices/code.sym} 2950 -1630 0 0 {name=ngspice
 only_toplevel=false 
 value="
 
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.option wnflag=1 
+.include init.txt
+.include pmos_params.txt
 
-.param length = 0.4
+.param length = 0.3
 .param width = 1
 
-.control 
-save all 
 
-save @m.xm1.msky130_fd_pr__pfet_01v8[gm]
-save @m.xm1.msky130_fd_pr__pfet_01v8[id]
-save @m.xm1.msky130_fd_pr__pfet_01v8[gds]
-save @m.xm1.msky130_fd_pr__pfet_01v8[cgg]
-save @m.xm1.msky130_fd_pr__pfet_01v8[vdsat]
-save @m.xm1.msky130_fd_pr__pfet_01v8[vgs]
-
-dc v1 0 1 1m  
-
-let gm = @m.xm1.msky130_fd_pr__pfet_01v8[gm]
-let id = @m.xm1.msky130_fd_pr__pfet_01v8[id]
-let gds = @m.xm1.msky130_fd_pr__pfet_01v8[gds]
-let cgg = @m.xm1.msky130_fd_pr__pfet_01v8[cgg]
-let vdsat = @m.xm1.msky130_fd_pr__pfet_01v8[vdsat]
-let vgs = @m.xm1.msky130_fd_pr__pfet_01v8[vgs]
-
-let gmro = gm/gds 
-let ft = gm/(2*pi*cgg)
-let gmoverid = gm/id
-
-wrdata gmro.txt gmro
-wrdata ft.txt ft 
-wrdata gmoverid.txt gmoverid 
-wrdata id.txt id
-wrdata vdsat.txt vdsat
-wrdata vgs.txt vgs
-
-.endc
 
 
 "

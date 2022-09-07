@@ -1,13 +1,3 @@
-name=ngspice 
-only_toplevel=false 
-value="
-
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.option wnflag=1 
-
-.param length = 0.4
-.param width = 1
-
 .control 
 save all 
 
@@ -18,7 +8,7 @@ save @m.xm1.msky130_fd_pr__pfet_01v8[cgg]
 save @m.xm1.msky130_fd_pr__pfet_01v8[vdsat]
 save @m.xm1.msky130_fd_pr__pfet_01v8[vgs]
 
-dc v2 0 1 1m  
+dc v1 0 1 1m  
 
 let gm = @m.xm1.msky130_fd_pr__pfet_01v8[gm]
 let id = @m.xm1.msky130_fd_pr__pfet_01v8[id]
@@ -31,13 +21,4 @@ let gmro = gm/gds
 let ft = gm/(2*pi*cgg)
 let gmoverid = gm/id
 
-wrdata gmro.txt gmro
-wrdata ft.txt ft 
-wrdata gmoverid.txt gmoverid 
-wrdata id.txt id
-wrdata vdsat.txt vdsat
-wrdata vgs.txt vgs
-
 .endc
-
-"

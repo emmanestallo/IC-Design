@@ -1,0 +1,9 @@
+.control
+wrdata gmro.txt gmro
+wrdata ft.txt ft
+wrdata gmoverid.txt gmoverid
+wrdata id.txt id
+wrdata vdsat.txt vdsat
+wrdata vgs.txt vgs
+
+.endc

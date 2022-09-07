@@ -38,47 +38,15 @@ C {devices/vsource.sym} 960 -1840 0 0 {name=V2 value=0.9
 C {devices/gnd.sym} 960 -1780 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1200 -1810 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1050 -1820 0 0 {name=l1 lab=GND}
-C {devices/code.sym} 1290 -1940 0 0 {name=ngspice 
-only_toplevel=false 
+C {devices/code.sym} 1320 -1940 0 0 {name="ngspice" 
+only_toplevel="false" 
 value="
 
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.option wnflag=1 
+.include init.txt
+.include nmos_params.txt
 
-.param length = 0.4
+.param length = 0.15
 .param width = 1
-
-.control 
-save all 
-
-save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-save @m.xm1.msky130_fd_pr__nfet_01v8[id]
-save @m.xm1.msky130_fd_pr__nfet_01v8[gds]
-save @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
-save @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
-save @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
-
-dc v2 0 1 1m  
-
-let gm = @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-let id = @m.xm1.msky130_fd_pr__nfet_01v8[id]
-let gds = @m.xm1.msky130_fd_pr__nfet_01v8[gds]
-let cgg = @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
-let vdsat = @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
-let vgs = @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
-
-let gmro = gm/gds 
-let ft = gm/(2*pi*cgg)
-let gmoverid = gm/id
-
-wrdata gmro.txt gmro
-wrdata ft.txt ft 
-wrdata gmoverid.txt gmoverid 
-wrdata id.txt id
-wrdata vdsat.txt vdsat
-wrdata vgs.txt vgs
-
-.endc
 
 
 "}
