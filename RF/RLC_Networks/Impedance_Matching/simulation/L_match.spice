@@ -1,0 +1,25 @@
+** sch_path: /home/engg/Desktop/IC Design/RF/RLC_Networks/Impedance_Matching/L_match.sch
+**.subckt L_match
+V1 in GND 0 AC 1 SIN(10 1 1MEG)
+C1 net1 GND 95.493p m=1
+R1 net1 in 50 m=1
+L1 out net1 23.873n m=1
+R2 out GND 5 m=1
+**** begin user architecture code
+
+
+.control
+
+tran 0.1n 100n
+plot v(out)
+
+
+.endc
+
+
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
