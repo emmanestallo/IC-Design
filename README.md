@@ -18,7 +18,7 @@ Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SK
   Impedance Matching:  
   The python code for pi-matching is found at "pi_match.py"  
     
-  The script asks for the load and source resistances, bandwidth, and center frequency.  
+  The script asks for the load and source resistances, bandwidth, and center frequency.    
   ![image](https://user-images.githubusercontent.com/68108648/189143356-e0a54d42-b421-49e6-a767-51435a7b635c.png)
     
   Outputs: Q-factor, L, C of the pi-matching network for both the DC pass and DC block topologies.  
