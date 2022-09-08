@@ -1,7 +1,7 @@
 # IC-Design
 Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
     
-  Note that the SKY130 PDK has a scale factor: $1\mu$
+  Note that the SKY130 PDK has a scale factor: $1\mu$  
   $g_m/I_D$ characterization on the SKY130 n1v8, with nominal $V_{DD} = 1.8V$, we use $V_{DS} = V_{GS} = 0.9$.  
     
   The .control file is found at "nmos_params.txt".  
