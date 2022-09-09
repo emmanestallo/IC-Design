@@ -1,4 +1,4 @@
-# IC-Design
+# Analog/RF IC Design
 Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
     
   ## NMOS Characterization: <br>
