@@ -1,0 +1,27 @@
+** sch_path: /home/emman/Desktop/IC-Design/RF/RLC_Networks/Parallel_RLC_Tank/parallel_rlc_tank.sch
+**.subckt parallel_rlc_tank
+L1 out GND 1n m=1
+R1 out GND 10 m=1
+C1 out GND 1p m=1
+I0 out GND 10m AC 1
+**** begin user architecture code
+
+
+
+.options savecurrents
+
+.control
+save all
+
+ac dec 10 1Meg 1T
+plot db(v(out))
+
+
+.endc
+
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
