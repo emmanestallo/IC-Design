@@ -1,7 +1,7 @@
-# IC-Design
+# Analog/RF IC Design
 Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
     
-  NMOS Characterization:  
+  ## NMOS Characterization: <br>
   SKY130 PDK scale factor: $1\mu$  
     
   For the $g_m/I_D$ characterization on the SKY130 n1v8 with nominal $V_{DD} = 1.8V$, we use $V_{DS} = V_{GS} = 0.9$.  
@@ -15,7 +15,7 @@ Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SK
     
     
     
-  Impedance Matching:  
+  ## Impedance Matching: <br>   
   The python code for pi-matching is found at "pi_match.py"  
     
   The script asks for the load and source resistances, bandwidth, and center frequency.    
