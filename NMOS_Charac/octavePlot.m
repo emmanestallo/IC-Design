@@ -7,6 +7,8 @@ vgs = load("-ascii","vgs.txt")(:,2);
 ft = load("-ascii","ft.txt")(:,2);
 gmro = load("-ascii","gmro.txt")(:,2);
 
+
+%%plotting 
 subplot(2,2,1);
 plot(vgs,gmoverid) 
 grid on 
