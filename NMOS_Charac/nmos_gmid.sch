@@ -44,6 +44,7 @@ value="
 
 .include init.txt
 .include nmos_params.txt
+.include to_file.txt
 
 .param length = 0.15
 .param width = 1

@@ -11,6 +11,7 @@ XM1 net1 net2 GND GND sky130_fd_pr__nfet_01v8 L=length W=width nf=1 ad='int((nf+
 
 .include init.txt
 .include nmos_params.txt
+.include to_file.txt
 
 .param length = 0.15
 .param width = 1
