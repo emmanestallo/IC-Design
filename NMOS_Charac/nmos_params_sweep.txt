@@ -1,0 +1,39 @@
+.control
+let init_l = 0.15
+let delta_l = 0.05
+let fin_l = 0.30
+
+let curr_l = init_l 
+
+while curr_l le fin_l
+	alter @m.xm1.msky130_fd_pr__nfet_01v8[L] = curr_l
+	
+	save all
+
+	save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
+	save @m.xm1.msky130_fd_pr__nfet_01v8[id]
+	save @m.xm1.msky130_fd_pr__nfet_01v8[gds]
+	save @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
+	save @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
+	save @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
+
+	dc v2 0 1 1m
+
+	let gm = @m.xm1.msky130_fd_pr__nfet_01v8[gm]
+	let id = @m.xm1.msky130_fd_pr__nfet_01v8[id]
+	let gds = @m.xm1.msky130_fd_pr__nfet_01v8[gds]
+	let cgg = @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
+	let vdsat = @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
+	let vgs = @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
+
+	let gmro = gm/gds
+	let ft = gm/(2*pi*cgg)
+	let gmoverid = gm/id
+
+	let curr_l = curr_l + delta_l 
+	
+end
+plot dc1.ft dc2.ft dc3.ft dc4.ft vs gmoverid
+
+
+.endc

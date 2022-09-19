@@ -2,19 +2,19 @@
 **.subckt nmos_gmid
 V1 net1 GND 0.9
 V2 net2 GND 0.9
-XM1 net1 net2 GND GND sky130_fd_pr__nfet_01v8 L=length W=width nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net1 net2 GND GND sky130_fd_pr__nfet_01v8 L=length W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
 **** begin user architecture code
 
 
 
 .include init.txt
 .include nmos_params.txt
-.include to_file.txt
 
-.param length = 0.6
-.param width = 1
+.param length=0.4
+
+.include to_file.txt
 
 
 

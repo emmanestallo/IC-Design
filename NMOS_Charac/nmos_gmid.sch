@@ -44,16 +44,16 @@ value="
 
 .include init.txt
 .include nmos_params.txt
-.include to_file.txt
 
-.param length = 0.6
-.param width = 1
+.param length=0.4
+
+.include to_file.txt
 
 
 "}
 C {sky130_fd_pr/nfet_01v8.sym} 1030 -1890 0 0 {name=M1
 L="length"
-W="width"
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
