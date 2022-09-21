@@ -5,7 +5,7 @@ let fin_l = 0.30
 
 let curr_l = init_l 
 
-while curr_l le fin_l
+dowhile curr_l <= fin_l
 	alter @m.xm1.msky130_fd_pr__nfet_01v8[L] = curr_l
 	
 	save all
@@ -18,7 +18,7 @@ while curr_l le fin_l
 	save @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
 
 	dc v2 0 1 1m
-
+	
 	let gm = @m.xm1.msky130_fd_pr__nfet_01v8[gm]
 	let id = @m.xm1.msky130_fd_pr__nfet_01v8[id]
 	let gds = @m.xm1.msky130_fd_pr__nfet_01v8[gds]
@@ -31,9 +31,11 @@ while curr_l le fin_l
 	let gmoverid = gm/id
 
 	let curr_l = curr_l + delta_l 
+	print @m.xm1.msky130_fd_pr__nfet_01v8[L]
 	
 end
-plot dc1.ft dc2.ft dc3.ft dc4.ft vs gmoverid
 
+plot dc1.id dc2.id dc3.id dc4.id
+plot dc1.gmro dc2.gmro dc3.gmro dc4.gmro
 
 .endc
