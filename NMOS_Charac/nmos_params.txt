@@ -8,6 +8,7 @@ save @m.xm1.msky130_fd_pr__nfet_01v8[cgg]
 save @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]
 save @m.xm1.msky130_fd_pr__nfet_01v8[vgs]
 
+*if V2 is VGS
 dc v2 0 1 1m
 
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8[gm]
