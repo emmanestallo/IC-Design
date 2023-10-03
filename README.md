@@ -1,5 +1,5 @@
 # Analog/RF IC Design
-Integrated circuit design using ngspice, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
+Integrated circuit design using ngspice, QUCS-S, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
     
   ## NMOS Characterization: <br>
   SKY130 PDK scale factor: $1\mu$  
