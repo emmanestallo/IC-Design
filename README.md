@@ -13,8 +13,11 @@ Integrated circuit design using NGSPICE, QUCS-S, MAGIC, XSCHEM, Octave, GNURadio
   With $W = 1$ and $L = 0.15$, we get  
   ![image](https://user-images.githubusercontent.com/68108648/189141591-299aa053-5f16-4afa-9294-84bfea33ee0c.png)
     
-  ## S-Parameter Analysis ($NF_{min}$)
+  ## S-Parameter Analysis 
   It is also possible to create a subcircuit in XSCHEM and import it in QUCS-S for S-Parameter simulation. 
+  ![image](https://github.com/emmanestallo/IC-Design/blob/main/circuits-pub/LNA/s-param/setup.png)
+
+  Shown below are the $NF_{min}$ plots from a width-sweep 
   ![image](https://github.com/emmanestallo/IC-Design/blob/main/circuits-pub/LNA/s-param/1v8_lvt_nfmin.png)
     
   ## Impedance Matching: <br>   
