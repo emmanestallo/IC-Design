@@ -1,7 +1,0 @@
-** sch_path: /home/arficx/Desktop/circuits/LNA/LNA-spice.sch
-.subckt LNA-spice d g s b
-XM1 d g s b sky130_fd_pr__nfet_01v8_lvt L=0.15 W='width' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-.ends
-.end

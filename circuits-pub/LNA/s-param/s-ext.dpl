@@ -1,0 +1,30 @@
+<Qucs Schematic 2.0.0>
+<Properties>
+  <View=0,0,1047,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=s-ext.dat>
+  <DataDisplay=s-ext.sch>
+  <OpenDisplay=1>
+  <Script=s-ext.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 110 307 880 267 3 #c0c0c0 1 00 0 4.5e+09 5e+08 5.5e+09 1 -0.208351 0.5 2.29221 1 -1 0.5 1 315 0 225 1 0 0 "" "" "">
+	<"ngspice/ac.v(nfmin)" #0000ff 0 3 0 0 0>
+	  <Mkr 5.04627e+09/20 161 -245 3 0 0>
+	  <Mkr 5.16263e+09/1 561 51 3 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

@@ -1,7 +1,44 @@
 ** sch_path: /home/arficx/Desktop/circuits/LNA/LNA-spice.sch
-.subckt LNA-spice b g d s
-XM1 d g s b sky130_fd_pr__nfet_01v8_lvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+**.subckt LNA-spice
+XM1 net1 vgs GND GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1
-.ends
+V1 vgs GND 1.8
+V2 net1 GND 1.8
+**** begin user architecture code
+
+
+.include init.txt
+
+.control
+save all
+
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
+
+dc V1 0 1.8 1m
+
+let id=@m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+let gm=@m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
+let cgg=@m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
+
+let ft = gm/(2*pi*cgg)
+
+
+
+
+.endc
+
+
+
+
+
+
+
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
 .end

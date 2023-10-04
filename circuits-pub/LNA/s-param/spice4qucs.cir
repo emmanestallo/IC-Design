@@ -1,0 +1,39 @@
+* Qucs 2.0.0 /home/arficx/Desktop/circuits/LNA/s-param/s-ext.sch
+.INCLUDE "/usr/local/share/qucs-s/xspice_cmlib/include/ngspice_mathfunc.inc"
+* Qucs 2.0.0  /home/arficx/Desktop/circuits/LNA/s-param/s-ext.sch
+
+** sch_path: /home/arficx/Desktop/circuits/LNA/LNA-spice.sch
+.subckt LNA-spice d g s b
+XM1 d g s b sky130_fd_pr__nfet_01v8_lvt L=0.15 W='width' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+.end
+
+.LIB "/usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.PARAM width = 10
+
+VP1 _net0 0 dc 0 ac 0.354813 SIN(0 0.354813 5G) portnum 1 z0 50
+VP2 _net1 0 dc 0 ac 0.354813 SIN(0 0.354813 5G) portnum 2 z0 50
+X1 _net1 _net0 0 gnd LNA-spice
+.control
+echo "" > spice4qucs.cir.noise
+echo "" > spice4qucs.cir.pz
+let number_width = 0
+echo "STEP sp.width" > spice4qucs.sp.cir.res
+foreach  width_act 1 2.9 4.8 6.7 8.6 10.5 12.4 14.3 16.2 18.1 20 
+alterparam width = $width_act
+reset
+SP DEC 101 1 10G 1
+write s-ext_sp_swp.txt  S_1_1 Y_1_1 Z_1_1 Cy_1_1 S_1_2 Y_1_2 Z_1_2 Cy_1_2 S_2_1 Y_2_1 Z_2_1 Cy_2_1 S_2_2 Y_2_2 Z_2_2 Cy_2_2 Rn NF SOpt NFmin
+set appendwrite
+echo "$&number_width  $width_act">> spice4qucs.sp.cir.res
+let number_width = number_width + 1
+end
+unset appendwrite
+destroy all
+reset
+
+exit
+.endc
+.END

@@ -1,9 +1,0 @@
-_net0 = 0.000000e+00
-_net1 = 2.911804e-26
-m.x1.xm1.msky130_fd_pr__nfet_01v8_lvt#body = -8.07301e-30
-m.x1.xm1.msky130_fd_pr__nfet_01v8_lvt#dbody = -2.01535e-29
-m.x1.xm1.msky130_fd_pr__nfet_01v8_lvt#sbody = -4.06556e-30
-vp1#branch = 0.000000e+00
-vp1#res = 0.000000e+00
-vp2#branch = 5.823608e-28
-vp2#res = 0.000000e+00
