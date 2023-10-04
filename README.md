@@ -1,5 +1,5 @@
 # Analog/RF IC Design
-Integrated circuit design using ngspice, QUCS-S, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
+Integrated circuit design using NGSPICE, QUCS-S, MAGIC, XSCHEM, Octave, GNURadio, and SKY130 PDK  
     
   ## NMOS Characterization: <br>
   SKY130 PDK scale factor: $1\mu$  
@@ -13,7 +13,9 @@ Integrated circuit design using ngspice, QUCS-S, MAGIC, XSCHEM, Octave, GNURadio
   With $W = 1$ and $L = 0.15$, we get  
   ![image](https://user-images.githubusercontent.com/68108648/189141591-299aa053-5f16-4afa-9294-84bfea33ee0c.png)
     
-    
+  ## S-Parameter Analysis ($NF_{min}$)
+  It is also possible to create a subcircuit in XSCHEM and import it in QUCS-S for S-Parameter simulation. 
+  ![image](https://github.com/emmanestallo/IC-Design/blob/main/circuits-pub/LNA/s-param/1v8_lvt_nfmin.png)
     
   ## Impedance Matching: <br>   
   The python code for pi-matching is found at "pi_match.py"  
